@@ -1,4 +1,4 @@
-import recursos.MyScanner;
+/*import recursos.MyScanner;
 
 import java.util.InputMismatchException;
 
@@ -60,3 +60,4 @@ public class CalculadoraHoras_Renzo
 
     }
 }
+*/
