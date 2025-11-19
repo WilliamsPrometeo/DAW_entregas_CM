@@ -33,7 +33,7 @@ public class calculadoraBasica {
         }
 
         num1 = pedirDato(num1);
-        num2 = pedirDato(num2);
+        num2 = pedirDato2(num2);
 
         System.out.println("====RESUMEN FINAL====");
         System.out.println("Numero 1: " + num1);
