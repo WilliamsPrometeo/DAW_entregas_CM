@@ -124,7 +124,7 @@ public class CalculadoraBasica {
     private static final MyScanner input = new MyScanner();
 
     //Método main
-    public static void main(String[] args) throws DivisionPorCeroException {
+    public static void main(String[] args){
         System.out.println("=== CALCULADORA DE HORAS LABORALES ===");
 
         //Declaramos las variables
@@ -137,13 +137,13 @@ public class CalculadoraBasica {
         //Hacemos un bucle para asegurarnos de que los numeros están en el rango comprendido
         //Utilizamos un do-while para entrar al menos una vez en el bucle, asi no hay que declarar a num1 ni a num2
         do { //Bucle num1
-            num1 = input.pedirDecimal(mensaje1);
+            num1 = pedirNumero(mensaje1);
             if (num1 < 0 || num1 > 100) {
                 System.out.println("Valor introducido erroneo. Rango del 0 al 100 válidos.");
             }
         } while (num1 < 0 || num1 > 100);
         do { //Bucle num2
-            num2 = input.pedirDecimal(mensaje2);
+            num2 = pedirNumero(mensaje2);
             if (num2 < 0 || num2 > 100) {
                 System.out.println("Valor introducido erroneo. Rango del 0 al 100 válidos.");
             }
