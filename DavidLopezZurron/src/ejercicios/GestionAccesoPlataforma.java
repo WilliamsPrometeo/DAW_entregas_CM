@@ -154,6 +154,7 @@ public class GestionAccesoPlataforma {
         return op;
     }
 
+    //Funcion que controla la excepcion
     public static String validarAcceso() {
         //Hacemos un try-catch para controlar la excepcion de identificador de acceso incorrecto
         try {
@@ -166,17 +167,19 @@ public class GestionAccesoPlataforma {
         }
     }
 
+    //Funcion que pide el acceso
     public static String pideAcceso() throws InvalidAccessException{
         //Solicitamos el
         System.out.println("Introuce el nombre: ");
-        String nombre = sc.nextLine();
-        if (nombre.length() >= 3 && nombre.matches("[A-Za-z0-9]+")) {
-            return nombre;
+        String idAcceso = sc.nextLine();
+        if (idAcceso.length() >= 3 && idAcceso.matches("[A-Za-z0-9]+") && idAcceso.matches(".*[0-9].*")) {
+            return idAcceso;
         }
-        throw new InvalidAccessException("Identificador de acceso incorrecto. Debe tener 3 o más caracteres y ser unicamente alfanumerico.\n");
+        throw new InvalidAccessException("Identificador de acceso incorrecto. Debe tener 3 o más caracteres, ser unicamente alfanumerico y contener mínimo un número y una letra.\n");
     }
 
-    public static String validarClave() throws InputMismatchException{
+    //Funcion que controlala excepcion
+    public static String validarClave() {
         //Hacemos un try-catch para controlar la excepcion de clave de acceso incorrecta
         try {
             //Si todo sale bien retornamos la clave
