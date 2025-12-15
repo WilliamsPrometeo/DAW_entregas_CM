@@ -144,13 +144,14 @@ public class GestionAccesoPlataforma {
             System.out.println("=============================");
 
             //Condicional para que, en el caso de que introduzca un numero no comprendido en el rango, sacar un texto indicandolo
-            if (op > 3 || op < 0){
+            if (op < 1 || op > 3)
+            {
                 System.out.println("Introduzca unicamente números del 1 al 3");
             }
 
             //Limpiar el salto de linea
             sc.nextLine();
-        } while (op > 3 || op < 0);
+        } while (op < 1 || op > 3);
         return op;
     }
 
@@ -170,12 +171,12 @@ public class GestionAccesoPlataforma {
     //Funcion que pide el acceso
     public static String pideAcceso() throws InvalidAccessException{
         //Solicitamos el
-        System.out.println("Introuce el nombre: ");
+        System.out.println("Introuce la clave de acceso: ");
         String idAcceso = sc.nextLine();
         if (idAcceso.length() >= 3 && idAcceso.matches("[A-Za-z0-9]+") && idAcceso.matches(".*[0-9].*") && idAcceso.matches(".*[A-Za-z].*"))  {
             return idAcceso;
         }
-        throw new InvalidAccessException("Identificador de acceso incorrecto. Debe tener 3 o más caracteres, ser unicamente alfanumerico y contener mínimo un número y una letra.\n");
+        throw new InvalidAccessException("Clave incorrecta. Debe tener 3 o más caracteres, ser unicamente alfanumerico y contener mínimo un número y una letra.\n");
     }
 
     //Funcion que controlala excepcion
@@ -192,7 +193,7 @@ public class GestionAccesoPlataforma {
     }
 
     public static String pideClave() throws InvalidPasswordException {
-        System.out.println("Introuce el nombre: ");
+        System.out.println("Introuce la clave: ");
         String password = sc.nextLine();
         if (password.length() >= 6 && password.matches(".*[0-9].*") && password.matches(".*[A-Z].*")){
             return password;
