@@ -1,5 +1,6 @@
 package daw.entregas;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GestionAcceso {
@@ -13,6 +14,7 @@ public class GestionAcceso {
         int opcion=0;
         //un bucle do-while
         do {
+            try {
             System.out.println("==== GESTIÓN DE ACCESO ====");
             System.out.println("1. Validar identificador de acceso" +
                     "\n2. Validar clave de seguridad" +
@@ -20,21 +22,25 @@ public class GestionAcceso {
             opcion = sc.nextInt();
             sc.nextLine();
             //switch controlar las condiciones
-            switch (opcion) {
-                case 1:
-                    String validacion_identificadorAcceso = validarAcceso() != null ? "Validación correcta" : "Validación incorrecta";
-                    System.out.println(validacion_identificadorAcceso);
-                    break;
-                case 2:
-                    String validacion_claveSeguridad = validarClave() != null ? "Validación correcta" : "Validación incorrecta";
-                    System.out.println(validacion_claveSeguridad);
-                    break;
-                case 3:
-                    System.out.println("==== Saliendo ====");
-                    break;
-                default:
-                    System.out.println("La opcion tiene que ser numerica.");
-                    break;
+
+                switch (opcion) {
+                    case 1:
+                        String validacion_identificadorAcceso = validarAcceso() != null ? "Validación correcta" : "Validación incorrecta";
+                        System.out.println(validacion_identificadorAcceso);
+                        break;
+                    case 2:
+                        String validacion_claveSeguridad = validarClave() != null ? "Validación correcta" : "Validación incorrecta";
+                        System.out.println(validacion_claveSeguridad);
+                        break;
+                    case 3:
+                        System.out.println("==== Saliendo ====");
+                        break;
+                    default:
+                        break;
+                }
+            }catch (InputMismatchException e){
+                System.out.println("La opcion tiene que ser numerica.");
+                sc.nextLine();
             }
         } while (opcion != 3);
     }
