@@ -172,7 +172,7 @@ public class GestionAccesoPlataforma {
         //Solicitamos el
         System.out.println("Introuce el nombre: ");
         String idAcceso = sc.nextLine();
-        if (idAcceso.length() >= 3 && idAcceso.matches("[A-Za-z0-9]+") && idAcceso.matches(".*[0-9].*")) {
+        if (idAcceso.length() >= 3 && idAcceso.matches("[A-Za-z0-9]+") && idAcceso.matches(".*[0-9].*") && idAcceso.matches(".*[A-Za-z].*"))  {
             return idAcceso;
         }
         throw new InvalidAccessException("Identificador de acceso incorrecto. Debe tener 3 o más caracteres, ser unicamente alfanumerico y contener mínimo un número y una letra.\n");
