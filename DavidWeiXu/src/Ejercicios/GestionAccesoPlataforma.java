@@ -68,7 +68,7 @@ public class GestionAccesoPlataforma {
     public static String pideId() throws InvalidIdException {
         System.out.print("Introduce el Id: ");
         String id = sc.nextLine();
-        if (id.length() >= 3 && id.matches("[A-Za-z0-9]+")) {
+        if (id.length() >= 3 && id.matches("[A-Za-z0-9]+") && id.matches(".*[0-9].*") && id.matches(".*[A-Za-z].*")) {
             return id;
         }
         throw new InvalidIdException("Id incorrecto. El Id debe tener al menos 3 caracteres y solo puede contener letras y numeros");
