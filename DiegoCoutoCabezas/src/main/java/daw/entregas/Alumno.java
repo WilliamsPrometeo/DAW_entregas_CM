@@ -1,4 +1,5 @@
 package daw.entregas;
+import java.util.InputMismatchException;
 
 import recursos.MyScanner;
 
