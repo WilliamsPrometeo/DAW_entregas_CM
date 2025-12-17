@@ -1,4 +1,4 @@
-
+package daw.entregas;
 
 import daw.entregas.CalculadoraException;
 import daw.entregas.MyScanner;
@@ -50,8 +50,8 @@ public class CalculadoraBasica {
        //retornamos los doubles para evitar hacer la operacion de nuevo y hacemos el calculo de la suma
     }
 
-    public static double restar(double a, double b) {
-        return a - b;
+    public static double restar(double num1, double num2) {
+        return num1 - num2;
         //hacemos el calculo de la resta
     }
 
@@ -59,10 +59,11 @@ public class CalculadoraBasica {
        return a * b;
        //hacemos el calculo de la multiplicacion
     }
+    public static double dividir(double a, double b) {
+        return a / b;
+        //hacemos el calculo de la division
+    }
 
 }
-    public static double dividir(double a, double b) {
-    return a / b;
-        //hacemos el calculo de la division
-}
+
 
