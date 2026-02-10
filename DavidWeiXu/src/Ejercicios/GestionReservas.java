@@ -108,7 +108,6 @@ public class GestionReservas {
         } else {
             System.out.println("No hay reservas que cumplan con el filtro!\n");
         }
-
     }
 
     // Filtro por mes
@@ -119,7 +118,6 @@ public class GestionReservas {
         } else {
             System.out.println("No hay reservas que cumplan con el filtro!\n");
         }
-
     }
 
     // Filtro por rango de año
