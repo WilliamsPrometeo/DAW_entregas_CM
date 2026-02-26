@@ -10,7 +10,7 @@ public class AccesoPlataforma {
 
     // clase para checkear con regex los requisitios del usuario
     private static boolean checkUserRequirements(String usuario) throws UserNotValidException {
-        if ((usuario.toLowerCase()).matches(".*[a-z].*") && (usuario.toLowerCase()).matches(".*[0-9].*") && usuario.length() >= 3) {
+        if ((usuario.toLowerCase()).matches("^(?=.*[0-9])$")) {
             return true;
         } else {
             throw new UserNotValidException("El usuario debe tener mínimo 3 letras y debe ser alfanumérico (solo letras y números)");
