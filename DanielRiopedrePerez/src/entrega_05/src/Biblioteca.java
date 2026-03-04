@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class Biblioteca {
     private static final MyScanner sc = new MyScanner();
 
@@ -11,7 +15,28 @@ public class Biblioteca {
     private static Map<Material, Integer> stockMateriales = new LinkedHashMap<>();
 
 
-    public boolean agregarMaterial() {
+    public static void main(String[] args) {
+
+        int opcion;
+        do{
+            opcion = sc.pedirNumero("===== GESTIÓN DE BIBLIOTECA DIGITAL =====" +
+                    "\n1. Añadir Material" +
+                    "\n2. Mostrar Stock" +
+                    "\n3. Prestar Material" +
+                    "\n4. Mostrar Material disponible" +
+                    "\n5. Salir");
+
+            switch(opcion){
+                case 1 -> agregarMaterial();
+                case 2 -> consultarStock();
+                case 3 -> prestarMaterial();
+                case 4 -> mostrarMateriales();
+                case 5 -> System.out.println("Exit successful.");
+            }
+        }while(opcion != 5);
+    }
+
+    public static boolean agregarMaterial() {
         String codigo = getCodigo();
         Material m = getMaterial(codigo);
         if (m != null) {
@@ -50,7 +75,7 @@ public class Biblioteca {
         }
     }
 
-    public void consultarStock() {
+    public static void consultarStock() {
         for (Map.Entry<Material, Integer> mapa : stockMateriales.entrySet()) {
             Material v = mapa.getKey();
             Integer valor = mapa.getValue();
@@ -58,13 +83,13 @@ public class Biblioteca {
         }
     }
 
-    public void mostrarMateriales() {
+    public static void mostrarMateriales() {
         for (Material v : listaMateriales) {
             System.out.println(v.mostrarDetalles());
         }
     }
 
-    public boolean prestarMaterial() {
+    public static boolean prestarMaterial() {
         String codigo = getCodigo();
         Material m = getMaterial(codigo);
         if (m != null) {
@@ -100,6 +125,8 @@ public class Biblioteca {
         return codigo;
     }
 }
+
+
 
 
 
