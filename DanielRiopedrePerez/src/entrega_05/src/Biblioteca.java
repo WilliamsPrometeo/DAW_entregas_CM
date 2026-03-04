@@ -77,15 +77,15 @@ public class Biblioteca {
 
     public static void consultarStock() {
         for (Map.Entry<Material, Integer> mapa : stockMateriales.entrySet()) {
-            Material v = mapa.getKey();
+            Material m = mapa.getKey();
             Integer valor = mapa.getValue();
-            System.out.println(v + " Stock: " + valor);
+            System.out.println(m + " Stock: " + valor);
         }
     }
 
     public static void mostrarMateriales() {
-        for (Material v : listaMateriales) {
-            System.out.println(v.mostrarDetalles());
+        for (Material m : listaMateriales) {
+            System.out.println(m.mostrarDetalles());
         }
     }
 
@@ -115,7 +115,7 @@ public class Biblioteca {
     }
 
     private static String getCodigo() {
-        String regex = "^[0-9]{4}[A-Z]{3}$";
+        String regex = "^[0-9]{4}[A-Z]{2}$";
         String codigo;
 
         do {
