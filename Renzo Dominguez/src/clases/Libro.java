@@ -1,0 +1,34 @@
+package clases;
+
+public class Libro extends Material
+{
+    //ATRIBUTO
+    private int numeroPaginas;
+
+    //CONSTRUCTOR
+    public Libro(String codigo, String titulo, String autor, int anioPublicacion, int numeroPaginas) {
+        super(codigo, titulo, autor, anioPublicacion);
+        this.numeroPaginas = numeroPaginas;
+    }
+
+    //GETTERS Y SETTERS
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public void setNumeroPaginas(int numeroPaginas) {
+        this.numeroPaginas = numeroPaginas;
+    }
+
+    //METODOS
+    @Override
+    public String mostrarDetalle()
+    {
+        return String.format("Libro: %s, %s, %s, %d, %d",
+                super.getCodigo(),
+                super.getTitulo(),
+                super.getAutor(),
+                super.getAnioPublicacion(),
+                this.getNumeroPaginas());
+    }
+}
