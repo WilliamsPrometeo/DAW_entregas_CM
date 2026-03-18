@@ -72,8 +72,8 @@ public class Inventario
                 String[] datos = linea.split(";");
                 String id = datos[0];
                 String titulo = datos[1];
-                Plataforma plataforma = datos[2];
-                double precio = datos[3];
+                Plataforma plataforma = Plataforma.valueOf(datos[2]);
+                double precio = Double.parseDouble(datos[3]);
                 videojuegos.add(new Videojuego(id, titulo, plataforma,precio));
             }
 
