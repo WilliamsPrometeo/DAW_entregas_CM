@@ -29,7 +29,6 @@ public class Main {
                     inventario.mostrarVideojuego();
                     break;
                 case 3:
-                    gestion.guardarClientes();
                     break;
                 case 4:
                     inventario.guardarVideojuego();
